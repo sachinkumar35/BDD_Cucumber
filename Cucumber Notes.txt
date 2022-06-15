@@ -1,0 +1,99 @@
+	---------- BDD CUCUMBER -------------
+	
+What is BDD?
+	Behaviour Driven Development = A simple text file - simple plane English
+	> Encouraging collaboration across roles to build shared understanding of the problem to be solved
+	> Working in rapid, small iterations to increase feedback and the flow of value
+	> Producing system documentation that is automatically checked against the system’s behaviour
+	
+CUCUMBER?
+	Cucumber is a Testing Approach. Implements BDD
+	https://cucumber.io........Using Gherkin(Given, When, Then, And, But)
+	Ex:-
+	~ Given I open Chrome Browser
+	~ And I enter the url in the address bar
+	~ And I hit the Enter button
+	~ Then I see the landing page appearing
+	
+****************************************************************************************************************************
+Now we have to know Three blocks Relationship :
+
+Feature file					|	Step Definition File 			|			Runner File
+--------------------------------|-----------------------------------|-------------------------------
+*simple text file. simple		|	*Class (java) file				|			*Class (java) file
+plain English					|	@Given							|			JUnit
+We write our Testing			|	@When 							|			TestNg
+Scenarios 						|	@Then							|
+src/test/resources				|	@And							|
+								|	@But							|
+								
+					   Matching glue code->					     Execution->
+					   
+					   
+******************************************************************************************************************************
+
+How to make a simple BDD Cucumber project Using MAVEN:
+
+1. 
+ Step1:  Install Eclipse PlugIn URL (Cucumber)
+	Open Eclipse/help/install new software
+					->Name: CucumberPlugIn
+					->Location: https://cucumber.github.io/cucumber-eclipse/update-site
+
+ Step2:  Install Natural Plugin 
+			> https://rlogiacco.github.io/Natural
+			
+ Step3: Window > Preferences > Type Maven > Archetypes > Add Remote Catalog
+		Maven Archetypes - https://repo1.maven.org/maven2/archetype-catalog.xml
+
+
+2. Create Maven Project
+	POM.xml which dependencies are important for BDD Cucumber
+	.webdrivernamager
+	.junit
+	.cucumber-jvm-deps
+	.hamcrest-core
+	.gherkin
+	.poi
+	.poi-ooxml
+	.selenium-java
+	.cucumber-core
+	.cucumber-html
+	.cobertura
+	.cucumber-reporting
+	.picocontainer
+ with same version
+	.cucumber-java
+	.cucumber-junit
+	.cucumber-testng
+	
+3. Work on :
+   FeatureFile
+   Step Definition File
+   Runner File
+	
+***************************************************************************************************************************
+
+** CUCUMBER Options **
+	
+	
+	package cucumber_learning;
+>>> In Runner file
+
+	@RunWith(Cucumber.class)
+	@CucumberOptions(
+		dryRun = false,  // it checks in deep so use false
+//		strict = true,   it check error in deep and we don't need of this in latest eclipse
+		monochrome = true, // it is used for makec beautiful console 
+		features = {"src/test/resources"}, // where we are putting all features file 
+		glue= {"cucumber_learning"}, // package name
+		plugin = {"pretty", "html:target/site/cucumber-html", "json:target/cucumber1/json"}, // it helps to generate report in html
+		tags = {"not @BookingMMABook"}
+		)
+	public class Runner {
+
+	}
+	
+
+
+	
