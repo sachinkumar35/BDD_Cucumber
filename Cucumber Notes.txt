@@ -18,16 +18,15 @@ CUCUMBER?
 ****************************************************************************************************************************
 Now we have to know Three blocks Relationship :
 
-Feature file					|	Step Definition File 			|			Runner File
---------------------------------|-----------------------------------|-------------------------------
-*simple text file. simple		|	*Class (java) file				|			*Class (java) file
-plain English					|	@Given							|			JUnit
-We write our Testing			|	@When 							|			TestNg
-Scenarios 						|	@Then							|
-src/test/resources				|	@And							|
-								|	@But							|
-								
-					   Matching glue code->					     Execution->
+Feature file			|	Step Definition File 		|			Runner File
+--------------------------------|-----------------------------------	|-------------------------------
+*simple text file. simple	|	*Class (java) file		|			*Class (java) file
+plain English			|	@Given				|			JUnit
+We write our Testing		|	@When 				|			TestNg
+Scenarios 			|	@Then				|
+src/test/resources		|	@And				|
+				|	@But				|				
+			Matching glue code->		       	xecution->
 					   
 					   
 ******************************************************************************************************************************
