@@ -17,5 +17,9 @@ import io.cucumber.junit.CucumberOptions;
 	tags = "@Login or @Logout"
 	)
 public class Runner {
+	
+//	@Override
+//	@DataProvider(parallel = true)
+//	public Object[][] scenarios() {return super.scenarios();}
 
 }
